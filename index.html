@@ -1,28 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Voetbaltenues per Continent</title>
+    <title>Voetbaltenues Wereldwijd</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        .header { background: green; color: white; padding: 10px; text-align: center; }
-        .content { padding: 20px; }
-        .gallery img { width: 200px; margin: 10px; }
+        /* Algemene stijl */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #001d3d, #004488);
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            background: #002244;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Navigatiebalk */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #003366;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            position: relative;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .navbar li:hover {
+            background: #004488;
+        }
+
+        .navbar ul ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #0055a4;
+            display: none;
+            list-style: none;
+        }
+
+        .navbar li:hover > ul {
+            display: block;
+        }
+
+        .navbar ul ul li {
+            width: 200px;
+        }
+
+        /* Stadion sectie */
+        .stadium {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center;
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stadium h2 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Content sectie */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .team-name {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <div class="header">
-        <h1>Voetbaltenues per Continent</h1>
+        <h1>Voetbaltenues Wereldwijd</h1>
     </div>
+
+    <!-- Navigatie -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Continenten</a>
+                <ul>
+                    <li><a href="#">Europa</a></li>
+                    <li><a href="#">Zuid-Amerika</a></li>
+                    <li><a href="#">Afrika</a></li>
+                    <li><a href="#">Azië</a></li>
+                    <li><a href="#">Oceanië</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Landen</a>
+                <ul>
+                    <li><a href="#">Nederland</a></li>
+                    <li><a href="#">Engeland</a></li>
+                    <li><a href="#">Brazilië</a></li>
+                    <li><a href="#">Argentinië</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Over Ons</a></li>
+        </ul>
+    </nav>
+
+    <!-- Stadion -->
+    <div class="stadium">
+        <h2>Welkom in het Stadion</h2>
+    </div>
+
+    <!-- Content -->
     <div class="content">
-        <h2>Europa</h2>
+        <h2>Voetbalclubs en Tenues</h2>
         <div class="gallery">
-            <img src="manchester_united_home.jpg" alt="Manchester United Thuis">
-            <img src="chelsea_away.jpg" alt="Chelsea Uit">
-        </div>
-        <h2>Zuid-Amerika</h2>
-        <div class="gallery">
-            <img src="flamengo_home.jpg" alt="Flamengo Thuis">
-            <img src="palmeiras_away.jpg" alt="Palmeiras Uit">
+            <div>
+                <img src="https://via.placeholder.com/200" alt="Manchester United Thuis">
+                <div class="team-name">Manchester United</div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" alt="Chelsea Uit">
+                <div class="team-name">Chelsea</div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" alt="Flamengo Thuis">
+                <div class="team-name">Flamengo</div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" alt="Palmeiras Uit">
+                <div class="team-name">Palmeiras</div>
+            </div>
         </div>
     </div>
 </body>
